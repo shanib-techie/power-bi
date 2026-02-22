@@ -7,6 +7,6 @@ CREATE TABLE students (
     name VARCHAR(50),
     age INT,
     marks INT
-);
+);`
 select * from students
 
