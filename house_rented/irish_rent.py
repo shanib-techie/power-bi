@@ -1,6 +1,5 @@
 import pandas as pd
 df = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.csv")
-df.to_excel("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.xlsx")
 # print(df)
 # "C:\Users\Admin\OneDrive\Desktop\power bi\deep_insight\employees.xlsx"
 print("some statistic thing :  \n")
@@ -22,6 +21,9 @@ print(df.isnull())
 # df.dropna(inplace = True)
 df.fillna(0,inplace= True)#agr starting me 0 krde so missing ki jagah 0 hoga
 print(df)
+print(df.describe())
+print("highest rent")
+print(max(df["rent_euro"]))
 # print(df.isnull())
 
 # #  AGR HAME FILE ME CHANE KRNE H TOH NYI FILE BANADO LAST ME USME AUTOMATICALLY CHNAGE DIK  JAINHE
@@ -34,3 +36,5 @@ print(df)
 
 # # NEW file me save
 # df.to_excel("data_updated.xlsx", index=False)
+
+df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.html")
