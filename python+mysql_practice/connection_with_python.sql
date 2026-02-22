@@ -9,3 +9,4 @@ CREATE TABLE students (
     marks INT
 );
 select * from students
+
