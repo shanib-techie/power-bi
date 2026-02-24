@@ -1,5 +1,5 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 df = pd.read_excel("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\retail_store_analysis\\Retail-Store-Transactions (1).xlsx")
 
@@ -90,5 +90,15 @@ print("each location with count of payment method ",loc_with_payment_type)
 loc_with_payment_type_count = df.groupby(["Location","PaymentType"]).size()
 print(loc_with_payment_type_count)
 
+loc_with_payment_type_count_make_graph = df.groupby(["Location","PaymentType"]).size().unstack()
+
+loc_with_payment_type_count_make_graph.plot(kind="bar")
+
+plt.xlabel("Stores")
+plt.ylabel("Count of Payment Type")
+plt.title("Payment Type Count per Store")
+
+plt.legend(title="Payment Type")
+plt.show()
 # print(df)
 df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\retail_store_analysis\\Retail-Store-Transactions (1).html")
