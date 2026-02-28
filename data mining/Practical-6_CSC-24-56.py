@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # 1. Load Dataset
 
-INPUT_FILE = r"C:\Users\anshu\OneDrive\Desktop\College\DSE (Discipline Specific Elective Courses)\Semester 3 - Data Mining I\Practicals\Datasets\Mall_Customers.csv"
+INPUT_FILE = "Mall_Customers.csv"
 df = pd.read_csv(INPUT_FILE)
 
 # Use only numeric clustering features
