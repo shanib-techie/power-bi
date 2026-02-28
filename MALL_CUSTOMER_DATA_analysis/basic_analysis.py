@@ -42,7 +42,7 @@ print(group_of_that_customer_who_lies_between_35_and_70)
 
 print("FINAL CROSS CHECK OF ALL CUSTOMER ",len(group_of_that_customer_who_lies_between_35_and_70) + len(group_where_female_score_less_35)+len(group_where_male_score_less_35)+len(group_where_female_score_more_70)+len(group_where_male_score_more_70))
 
-
+print("==================================================================================================================================")
 print("RICH AND VALUED CUSTOMERS")
 grp_age_bt_23_55_score_75_above_income_55_above = df[ (df["Age"] >= 23) & (df["Age"] <= 55 )  & (df["Spending Score (1-100)"] >= 75) & (df["Annual Income (k$)"] > 55) ]
 print("NUMBER OF OUR GOLDEN CUSTOMER : ",len(grp_age_bt_23_55_score_75_above_income_55_above))
@@ -50,8 +50,17 @@ female_from_rich_cat = grp_age_bt_23_55_score_75_above_income_55_above[grp_age_b
 print("NUMBER OF FEMALE FROM THIS CLUSTER : " ,len(female_from_rich_cat))
 male_from_rich_cat = grp_age_bt_23_55_score_75_above_income_55_above[grp_age_bt_23_55_score_75_above_income_55_above["Gender"] == "Male"]
 print("NUMBER OF MALE FROM THIS CLUSTER  :",len(male_from_rich_cat))
-
-
 print(grp_age_bt_23_55_score_75_above_income_55_above["Gender"].value_counts())
-
 print(grp_age_bt_23_55_score_75_above_income_55_above)
+
+
+print("===================================================================================================================================")
+print("POOR AND UNVALUED CUSTOMERS")
+grp_age_less_23_more_55_score_25_above_income_less = df[ (df["Age"] < 23) | (df["Age"] > 55 )  & (df["Spending Score (1-100)"] <= 25) & (df["Annual Income (k$)"] > 50) ]
+print("NUMBER OF  POOR AND UNVALUED CUSTOMER : ",len(grp_age_less_23_more_55_score_25_above_income_less))
+female_from_poor_cat = grp_age_less_23_more_55_score_25_above_income_less[grp_age_less_23_more_55_score_25_above_income_less["Gender"] == "Female"]
+print("NUMBER OF FEMALE FROM THIS CLUSTER : " ,len(female_from_poor_cat))
+male_from_poor_cat = grp_age_less_23_more_55_score_25_above_income_less[grp_age_less_23_more_55_score_25_above_income_less["Gender"] == "Male"]
+print("NUMBER OF MALE FROM THIS CLUSTER  :",len(male_from_poor_cat))
+print(grp_age_less_23_more_55_score_25_above_income_less["Gender"].value_counts())
+print(grp_age_less_23_more_55_score_25_above_income_less)
