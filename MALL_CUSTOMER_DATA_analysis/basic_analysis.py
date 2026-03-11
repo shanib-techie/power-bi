@@ -42,7 +42,7 @@ print(group_of_that_customer_who_lies_between_35_and_70)
 
 print("FINAL CROSS CHECK OF ALL CUSTOMER ",len(group_of_that_customer_who_lies_between_35_and_70) + len(group_where_female_score_less_35)+len(group_where_male_score_less_35)+len(group_where_female_score_more_70)+len(group_where_male_score_more_70))
 
-print("==================================================================================================================================")
+# print("==================================================================================================================================")
 print("RICH AND VALUED CUSTOMERS")
 grp_age_bt_23_55_score_75_above_income_55_above = df[ (df["Age"] >= 23) & (df["Age"] <= 55 )  & (df["Spending Score (1-100)"] >= 75) & (df["Annual Income (k$)"] > 55) ]
 print("NUMBER OF OUR GOLDEN CUSTOMER : ",len(grp_age_bt_23_55_score_75_above_income_55_above))
@@ -64,3 +64,18 @@ male_from_poor_cat = grp_age_less_23_more_55_score_25_above_income_less[grp_age_
 print("NUMBER OF MALE FROM THIS CLUSTER  :",len(male_from_poor_cat))
 print(grp_age_less_23_more_55_score_25_above_income_less["Gender"].value_counts())
 print(grp_age_less_23_more_55_score_25_above_income_less)
+
+print("==========================================================================================================================")
+mode_of_age = df["Age"].mode()
+print(mode_of_age)
+count_of_ages =df["Age"].value_counts()
+print(count_of_ages)
+mode_of_age_y_gender = df.groupby(["Gender","Age"]).value_counts().head(1)
+print("MODE OF AGE BY GENDER\n")
+print(mode_of_age_y_gender)###error
+gender_wise_age_count = df.groupby("Gender")["Age"].value_counts()
+print("gender wise age count\n")
+print(gender_wise_age_count)
+print(df.groupby("Gender")["Age"].value_counts())
+
+print("================================================================================================================================")

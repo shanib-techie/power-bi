@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # 1. Load Dataset
 
-INPUT_FILE = "Mall_Customers.csv"
+INPUT_FILE = "C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\data mining\\Mall_Customers.csv"
 df = pd.read_csv(INPUT_FILE)
 
 # Use only numeric clustering features
