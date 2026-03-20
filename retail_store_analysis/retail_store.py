@@ -54,20 +54,20 @@ r_each_l_graph.plot(kind="bar")
 
 
 
-# tablet_revenue = df[df["Product"] == "Tablet"]["TotalPrice"].sum()
-# print("How much revenue from Tablet:", tablet_revenue)
-# printer_revenue = df[df["Product"] == "Printer"]["TotalPrice"].sum()
-# print("how much revenue from printer",printer_revenue)
-# phone_revenue = df[df["Product"] == "Phone"]["TotalPrice"].sum()
-# print("how much revenue from phone",phone_revenue)
-# monitor_revenue = df[df["Product"] == "Monitor"]["TotalPrice"].sum()
-# print("revenue from monitor ",monitor_revenue)
-# laptop_revenue = df[df["Product"] == "Laptop"]["TotalPrice"].sum()
-# print("revenue from Laptop",laptop_revenue)
-# chair_revenue = df[df["Product"] == "Chair"]["TotalPrice"].sum()
-# print("revenue from chair ",chair_revenue)
-# desk_revenue = df[df["Product"] == "Desk"]["TotalPrice"].sum()
-# print("REvenue from desk",desk_revenue)
+tablet_revenue = df[df["Product"] == "Tablet"]["TotalPrice"].sum()
+print("How much revenue from Tablet:", tablet_revenue)
+printer_revenue = df[df["Product"] == "Printer"]["TotalPrice"].sum()
+print("how much revenue from printer",printer_revenue)
+phone_revenue = df[df["Product"] == "Phone"]["TotalPrice"].sum()
+print("how much revenue from phone",phone_revenue)
+monitor_revenue = df[df["Product"] == "Monitor"]["TotalPrice"].sum()
+print("revenue from monitor ",monitor_revenue)
+laptop_revenue = df[df["Product"] == "Laptop"]["TotalPrice"].sum()
+print("revenue from Laptop",laptop_revenue)
+chair_revenue = df[df["Product"] == "Chair"]["TotalPrice"].sum()
+print("revenue from chair ",chair_revenue)
+desk_revenue = df[df["Product"] == "Desk"]["TotalPrice"].sum()
+print("REvenue from desk",desk_revenue)
 
 
 
@@ -94,7 +94,7 @@ print(loc_with_payment_type_count)
 
 
 
-plt.show()
+# plt.show()
 
 # loc_with_payment_type_count_make_graph = df.groupby(["Location","PaymentType"]).size().unstack()
 
@@ -107,22 +107,22 @@ plt.show()
 # plt.legend(title="Payment Type")
 # plt.show()
 # print(df)
-df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\retail_store_analysis\\Retail-Store-Transactions (1).html")
+# df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\retail_store_analysis\\Retail-Store-Transactions (1).html")
 
 # operation on store manager
 
-# storemanager_names = df["StoreManager"].unique()
-# print("NUMBER OF STORE MANAGER = > ",len(storemanager_names))
-# print("store manager = >",storemanager_names)
+storemanager_names = df["StoreManager"].unique()
+print("NUMBER OF STORE MANAGER = > ",len(storemanager_names))
+print("store manager = >",storemanager_names)
 
 # # each store manager total sale 
-# print("each store manager total sale :")
-# val_of_each_store_manager = df["StoreManager"].value_counts()
-# print(val_of_each_store_manager)
+print("each store manager total sale :")
+val_of_each_store_manager = df["StoreManager"].value_counts()
+print(val_of_each_store_manager)
 
-# print("DID CASHIER AND STORRE MANAGER ARE SAME ??")
-# grp_of_cashier_and_manager = df.groupby(["Cashier","StoreManager"]).size()
-# print(grp_of_cashier_and_manager)
+print("DID CASHIER AND STORRE MANAGER ARE SAME ??")
+grp_of_cashier_and_manager = df.groupby(["Cashier","StoreManager"]).size()
+print(grp_of_cashier_and_manager)
 
 # grp_of_cashier_and_manager_graph = df.groupby(["Cashier","StoreManager"]).size().unstack()
 
@@ -136,11 +136,27 @@ df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\retail_store_analysis
 
 
 
-# grp_of_manager_with_product = df.groupby(["StoreManager" , "Product"])["TotalPrice"].sum()
-# print("STORE MANAGER WITH HIS SALES IN EACH PRODUCT : ")
-# print(grp_of_manager_with_product)
+grp_of_manager_with_product = df.groupby(["StoreManager" , "Product"])["TotalPrice"].sum()
+print("STORE MANAGER WITH HIS SALES IN EACH PRODUCT : ")
+print(grp_of_manager_with_product)
 
+summary = df.groupby("StoreManager").agg(
+    Total_Sales=("TotalPrice", "sum"),
+    Avg_Sale=("TotalPrice", "mean"),
+    Number_of_Transactions=("TotalPrice", "count")
+)
 
+print(summary)
+pivot = df.pivot_table(
+    index="StoreManager",
+    columns="Product",
+    values="TotalPrice",
+    aggfunc="sum",
+    margins=True,
+    margins_name="Total_All_Products"
+)
+
+print(pivot)
 
 # print(df["Cashier"].unique())
 # ///////////////////////////////GROUP GRAPH OF EACH STORE MANAGER PERTICULAR ITEM SALES
