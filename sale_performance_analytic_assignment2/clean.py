@@ -1,10 +1,11 @@
 import pandas as pd
 
 # Load datasets
-sales = pd.read_csv("crm_sales_dataset.csv")
-reps = pd.read_csv("sales_reps.csv")
-products = pd.read_csv("products.csv")
+sales = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\sale_performance_analytic_assignment2\\crm_sales_dataset.csv")
+reps = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\sale_performance_analytic_assignment2\\sales_reps.csv")
+products = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\sale_performance_analytic_assignment2\\products.csv")
 
+sales.to_excel("excel_of_unclean_sales_data.xlsx")
 print(sales.head())
 print(sales.info())
 
