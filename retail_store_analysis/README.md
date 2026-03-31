@@ -307,6 +307,9 @@ print(pivot)
 <!-- ![Power BI Overview](screenshots/powerbi_overview.png) -->
 
 ```
+## 🖥️ Page 1 — Overview Dashboard
+
+![Overview Dashboard](retail_store_analysis\Screenshot 2026-03-31 104807.png)
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
 │     📌 ADD SCREENSHOT  →  retail_store_analysis\Screenshot 2026-03-31 104807.png  │
