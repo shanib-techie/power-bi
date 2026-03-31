@@ -309,12 +309,9 @@ print(pivot)
 ```
 ## 🖥️ Page 1 — Overview Dashboard
 
-![Overview Dashboard](Screenshot 2026-03-31 104807.png)
+## 🖥️ Page 1 — Overview Dashboard
 
-<br/>
-
-
-<br/>
+![Overview Dashboard](retail_store_analysis/Screenshot 2026-03-31 104807.png)
 
 ### 🔗 Power BI Features Built
 
