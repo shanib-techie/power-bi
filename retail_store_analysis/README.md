@@ -309,7 +309,7 @@ print(pivot)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│     📌 ADD SCREENSHOT  →  screenshots/powerbi_overview.png  │
+│     📌 ADD SCREENSHOT  →  retail_store_analysis\Screenshot 2026-03-31 104807.png  │
 │                                                             │
 │     [ Take a screenshot of your Power BI Overview page ]   │
 │                                                             │
@@ -318,35 +318,6 @@ print(pivot)
 
 <br/>
 
-#### 📦 Page 2 — Product & Revenue Analysis
-<!-- Once you add the screenshot, replace the block below with: -->
-<!-- ![Power BI Products](screenshots/powerbi_products.png) -->
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│     📌 ADD SCREENSHOT  →  screenshots/powerbi_products.png  │
-│                                                             │
-│     [ Take a screenshot of your Product Analysis page ]    │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-<br/>
-
-#### 🏪 Page 3 — Store & Manager Performance
-<!-- Once you add the screenshot, replace the block below with: -->
-<!-- ![Power BI Stores](screenshots/powerbi_stores.png) -->
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│     📌 ADD SCREENSHOT  →  .png    │
-│                                                             │
-│     [ Take a screenshot of your Store Performance page ]   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
 
 <br/>
 
