@@ -38,3 +38,4 @@ print(max(df["rent_euro"]))
 # df.to_excel("data_updated.xlsx", index=False)
 
 df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.html")
+
