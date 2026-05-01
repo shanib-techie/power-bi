@@ -1,41 +1,76 @@
-import pandas as pd
-df = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.csv")
-# print(df)
-# "C:\Users\Admin\OneDrive\Desktop\power bi\deep_insight\employees.xlsx"
-print("some statistic thing :  \n")
-print (df.describe())# numeric ka samaan return krta h
-
-
-
-print("shape : return M X N : ")
-print(df.shape)
-
-print("total no of coloum : ")
-print(df.columns)
-
-
-# return true where null
-print(df.isnull())
-# BEDROOM_NUM is true so its null
-"""NOW, WE STUDY DIFFERENT WAY TO DEAL WITH THIS TYPE OF PROBLEM"""
-# df.dropna(inplace = True)
-df.fillna(0,inplace= True)#agr starting me 0 krde so missing ki jagah 0 hoga
-print(df)
-print(df.describe())
-print("highest rent")
-print(max(df["rent_euro"]))
-# print(df.isnull())
-
-# #  AGR HAME FILE ME CHANE KRNE H TOH NYI FILE BANADO LAST ME USME AUTOMATICALLY CHNAGE DIK  JAINHE
 # import pandas as pd
+# df = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.csv")
+# # print(df)
+# # "C:\Users\Admin\OneDrive\Desktop\power bi\deep_insight\employees.xlsx"
+# print("some statistic thing :  \n")
+# print (df.describe())# numeric ka samaan return krta h
 
-# df = pd.read_excel("data.xlsx")
 
-# # operations
-# df["Total"] = df["Sales"] + df["Profit"]
 
-# # NEW file me save
-# df.to_excel("data_updated.xlsx", index=False)
+# print("shape : return M X N : ")
+# print(df.shape)
 
-df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.html")
+# print("total no of coloum : ")
+# print(df.columns)
 
+
+# # return true where null
+# print(df.isnull())
+# # BEDROOM_NUM is true so its null
+# """NOW, WE STUDY DIFFERENT WAY TO DEAL WITH THIS TYPE OF PROBLEM"""
+# # df.dropna(inplace = True)
+# df.fillna(0,inplace= True)#agr starting me 0 krde so missing ki jagah 0 hoga
+# print(df)
+# print(df.describe())
+# print("highest rent")
+# print(max(df["rent_euro"]))
+# # print(df.isnull())
+
+# # #  AGR HAME FILE ME CHANE KRNE H TOH NYI FILE BANADO LAST ME USME AUTOMATICALLY CHNAGE DIK  JAINHE
+# # import pandas as pd
+
+# # df = pd.read_excel("data.xlsx")
+
+# # # operations
+# # df["Total"] = df["Sales"] + df["Profit"]
+
+# # # NEW file me save
+# # df.to_excel("data_updated.xlsx", index=False)
+
+# df.to_html("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\house_rented\\irish_rent_by_county.html")
+
+import numpy as np
+import pandas as pd
+
+df1 = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\complete pandas\\DSE_PRACTICALS\\QUES2_student_attendance\\workshop1.csv")
+df2 = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\complete pandas\\DSE_PRACTICALS\\QUES2_student_attendance\\workshop2.csv")
+dict = {
+    "NAME" : "BHAWESH JOSHI",
+    "ROLL NO." : "CSC-24-14"
+}
+# a
+both = pd.merge(df1, df2, on="Name", how="inner")
+print("Students attended both workshops:")
+print(dict)
+print(both["Name"])
+
+# b
+single = pd.merge(df1, df2, on="Name", how="outer", indicator=True)
+print("\nStudents attended single workshop only:")
+print(dict)
+print(single[single["_merge"] != "both"]["Name"])
+
+# c
+combined = pd.concat([df1, df2], axis=0)
+print(dict)
+print("\nTotal records:")
+print(len(combined))
+
+# d
+combined.set_index(["Name", "Date"], inplace=True)
+print(dict)
+print("\nHierarchical DataFrame:")
+print(combined)
+print(dict)
+print("\nDescriptive Statistics:")
+print(combined.describe())
