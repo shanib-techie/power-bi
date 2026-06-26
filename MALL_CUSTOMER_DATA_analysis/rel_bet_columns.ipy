@@ -1,0 +1,16 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("C:\\Users\\Admin\\OneDrive\\Desktop\\power bi\\MALL_CUSTOMER_DATA_analysis\\Mall_Customers.csv")
+
+print(df.columns)
+
+df_encoded = pd.get_dummies(df[["Gender","Age","Annual Income (k$)","Spending Score (1-100)"]])
+
+rel = df_encoded.corr()
+print(rel)
+
+sns.heatmap(rel, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Correlation Heatmap")
+plt.show()
